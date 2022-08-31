@@ -82,6 +82,14 @@ open class DuckDuckGoApplication : HasDaggerInjector, Application() {
 
         if (appIsRestarting()) return
 
+        android.os.StrictMode.setThreadPolicy(
+            android.os.StrictMode.ThreadPolicy.Builder()
+                .detectDiskReads()
+                .detectDiskWrites()
+                .penaltyLog()
+                .build()
+        )
+
         configureDependencyInjection()
         setupActivityLifecycleCallbacks()
         configureUncaughtExceptionHandler(currentProcess)

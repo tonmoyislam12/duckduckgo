@@ -18,17 +18,19 @@ package com.duckduckgo.app.email
 
 import android.content.Context
 import android.os.Bundle
+import android.view.LayoutInflater
 import com.duckduckgo.app.browser.R
+import com.duckduckgo.app.browser.databinding.ContentAutofillTooltipBinding
 import com.duckduckgo.app.global.extensions.html
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
-import kotlinx.android.synthetic.main.content_autofill_tooltip.*
 
 class EmailAutofillTooltipFragment(
     context: Context,
     val address: String
 ) : BottomSheetDialog(context, R.style.EmailTooltip) {
 
+    private lateinit var binding: ContentAutofillTooltipBinding
     var useAddress: (() -> Unit) = {}
     var usePrivateAlias: (() -> Unit) = {}
 
@@ -38,20 +40,21 @@ class EmailAutofillTooltipFragment(
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = ContentAutofillTooltipBinding.inflate(LayoutInflater.from(context))
         setDialog()
     }
 
     private fun setDialog() {
         behavior.state = BottomSheetBehavior.STATE_EXPANDED
         val addressFormatted = context.getString(R.string.autofillTooltipUseYourAlias, address)
-        tooltipPrimaryCtaTitle.text = addressFormatted.html(context)
+        binding.tooltipPrimaryCtaTitle.text = addressFormatted.html(context)
 
-        secondaryCta.setOnClickListener {
+        binding.secondaryCta.setOnClickListener {
             usePrivateAlias()
             dismiss()
         }
 
-        primaryCta.setOnClickListener {
+        binding.primaryCta.setOnClickListener {
             useAddress()
             dismiss()
         }

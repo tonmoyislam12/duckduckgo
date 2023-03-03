@@ -626,7 +626,7 @@
 
     <!-- MacOs Settings -->
     <string name="macos_settings_description">Pretražujte privatno s našom aplikacijom za Mac</string>
-    <string name="macos_settings_title">DuckDuckGo aplikacija za osobno računalo</string>
+    <string name="macos_settings_title">Aplikacija DuckDuckGo za Mac</string>
 
     <!-- Downloads -->
     <string name="downloadsMenuItem">Preuzimanja</string>
@@ -682,6 +682,13 @@
     <string name="permissionsPerWebsiteAllowSetting">Dopusti</string>
     <string name="permissionsPerWebsiteAskDisabledSetting">Opcija \"Pitaj\" onemogućena je za sve web lokacije</string>
     <string name="permissionsPerWebsiteSelectorDialogTitle" instruction="%1$s is the name of a permissions and %2$s is the name of a website, i.e. Camera permission for example.com">%1$s dopuštenje za %2$s</string>
+
+    <!-- Windows Settings -->
+    <string name="windows_settings_title">Aplikacija DuckDuckGo za Windows</string>
+    <string name="windows_settings_description">Privatno pregledavanje s našom aplikacijom za Windows</string>
+    <string name="windows_settings_description_ready">Preuzimanje je dostupno</string>
+    <string name="windows_settings_description_list">Na popisu si!</string>
+    <string name="marcosTest">Allow</string>
 
     <!-- Notify Me View on Downloads -->
     <string name="downloadsNotifyMeTitle">Saznaj kad su preuzimanja spremna</string>

@@ -618,7 +618,7 @@
 
     <!-- MacOs Settings -->
     <string name="macos_settings_description">Surf privat med vår app for Mac</string>
-    <string name="macos_settings_title">DuckDuckGo skrivebordsapp</string>
+    <string name="macos_settings_title">DuckDuckGo Mac-app</string>
 
     <!-- Downloads -->
     <string name="downloadsMenuItem">Nedlastinger</string>
@@ -674,6 +674,13 @@
     <string name="permissionsPerWebsiteAllowSetting">Tillat</string>
     <string name="permissionsPerWebsiteAskDisabledSetting">«Spør» er deaktivert for alle nettsteder</string>
     <string name="permissionsPerWebsiteSelectorDialogTitle" instruction="%1$s is the name of a permissions and %2$s is the name of a website, i.e. Camera permission for example.com">%1$stillatelse for %2$s</string>
+
+    <!-- Windows Settings -->
+    <string name="windows_settings_title">DuckDuckGo Windows-app</string>
+    <string name="windows_settings_description">Surf privat med vår app for Windows</string>
+    <string name="windows_settings_description_ready">Nedlasting tilgjengelig</string>
+    <string name="windows_settings_description_list">Du er satt på listen!</string>
+    <string name="marcosTest">Allow</string>
 
     <!-- Notify Me View on Downloads -->
     <string name="downloadsNotifyMeTitle">Finn ut når nedlastinger er klare</string>

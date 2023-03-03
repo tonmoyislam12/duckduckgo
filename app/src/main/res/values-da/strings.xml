@@ -618,7 +618,7 @@
 
     <!-- MacOs Settings -->
     <string name="macos_settings_description">Browse privat med vores app til Mac</string>
-    <string name="macos_settings_title">DuckDuckGo skrivebordsapp</string>
+    <string name="macos_settings_title">DuckDuckGo-app til Mac</string>
 
     <!-- Downloads -->
     <string name="downloadsMenuItem">Downloads</string>
@@ -674,6 +674,13 @@
     <string name="permissionsPerWebsiteAllowSetting">Tillad</string>
     <string name="permissionsPerWebsiteAskDisabledSetting">\"Spørg\" er deaktiveret for alle websteder</string>
     <string name="permissionsPerWebsiteSelectorDialogTitle" instruction="%1$s is the name of a permissions and %2$s is the name of a website, i.e. Camera permission for example.com">%1$s tilladelse til %2$s</string>
+
+    <!-- Windows Settings -->
+    <string name="windows_settings_title">DuckDuckGo-app til Windows</string>
+    <string name="windows_settings_description">Browse privat med vores app til Windows</string>
+    <string name="windows_settings_description_ready">Download tilgængelig</string>
+    <string name="windows_settings_description_list">Du er på listen!</string>
+    <string name="marcosTest">Allow</string>
 
     <!-- Notify Me View on Downloads -->
     <string name="downloadsNotifyMeTitle">Find ud af, hvornår downloads er klar</string>

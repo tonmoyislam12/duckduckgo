@@ -622,7 +622,7 @@
 
     <!-- MacOs Settings -->
     <string name="macos_settings_description">Pārlūko privāti, izmantojot mūsu Mac lietotni</string>
-    <string name="macos_settings_title">DuckDuckGo darbvirsmas lietotne</string>
+    <string name="macos_settings_title">DuckDuckGo Mac lietotne</string>
 
     <!-- Downloads -->
     <string name="downloadsMenuItem">Lejupielādes</string>
@@ -678,6 +678,13 @@
     <string name="permissionsPerWebsiteAllowSetting">Atļaut</string>
     <string name="permissionsPerWebsiteAskDisabledSetting">“Jautāt” ir atspējots visām vietnēm</string>
     <string name="permissionsPerWebsiteSelectorDialogTitle" instruction="%1$s is the name of a permissions and %2$s is the name of a website, i.e. Camera permission for example.com">%1$s – atļauja vietnei %2$s</string>
+
+    <!-- Windows Settings -->
+    <string name="windows_settings_title">DuckDuckGo Windows lietotne</string>
+    <string name="windows_settings_description">Pārlūko privāti ar mūsu Windows lietotni</string>
+    <string name="windows_settings_description_ready">Pieejama lejupielāde</string>
+    <string name="windows_settings_description_list">Tu esi sarakstā!</string>
+    <string name="marcosTest">Allow</string>
 
     <!-- Notify Me View on Downloads -->
     <string name="downloadsNotifyMeTitle">Uzzini, kad lejupielādes ir gatavas</string>

@@ -618,7 +618,7 @@
 
     <!-- MacOs Settings -->
     <string name="macos_settings_description">Navega de forma privada con nuestra aplicación para Mac</string>
-    <string name="macos_settings_title">Aplicación de escritorio DuckDuckGo</string>
+    <string name="macos_settings_title">Aplicación DuckDuckGo para Mac</string>
 
     <!-- Downloads -->
     <string name="downloadsMenuItem">Descargas</string>
@@ -674,6 +674,13 @@
     <string name="permissionsPerWebsiteAllowSetting">Permitir</string>
     <string name="permissionsPerWebsiteAskDisabledSetting">\"Preguntar\" desactivado para todos los sitios</string>
     <string name="permissionsPerWebsiteSelectorDialogTitle" instruction="%1$s is the name of a permissions and %2$s is the name of a website, i.e. Camera permission for example.com">%1$s permiso para %2$s</string>
+
+    <!-- Windows Settings -->
+    <string name="windows_settings_title">Aplicación DuckDuckGo para Windows</string>
+    <string name="windows_settings_description">Navega de forma privada con nuestra aplicación para Windows</string>
+    <string name="windows_settings_description_ready">Descarga disponible</string>
+    <string name="windows_settings_description_list">¡Estás en la lista!</string>
+    <string name="marcosTest">Allow</string>
 
     <!-- Notify Me View on Downloads -->
     <string name="downloadsNotifyMeTitle">Entérate de cuándo están listas las descargas</string>

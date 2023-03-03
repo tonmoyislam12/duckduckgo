@@ -626,7 +626,7 @@
 
     <!-- MacOs Settings -->
     <string name="macos_settings_description">Przeglądaj prywatnie za pomocą aplikacji dla komputerów Mac</string>
-    <string name="macos_settings_title">Aplikacja komputerowa DuckDuckGo</string>
+    <string name="macos_settings_title">Aplikacja DuckDuckGo na komputery Mac</string>
 
     <!-- Downloads -->
     <string name="downloadsMenuItem">Pobrane</string>
@@ -682,6 +682,13 @@
     <string name="permissionsPerWebsiteAllowSetting">Zezwól</string>
     <string name="permissionsPerWebsiteAskDisabledSetting">Wyłączono opcję „Pytaj” dla wszystkich witryn</string>
     <string name="permissionsPerWebsiteSelectorDialogTitle" instruction="%1$s is the name of a permissions and %2$s is the name of a website, i.e. Camera permission for example.com">Pozwolenie dla witryny %2$s na dostęp do urządzenia: %1$s</string>
+
+    <!-- Windows Settings -->
+    <string name="windows_settings_title">Aplikacja DuckDuckGo dla systemu Windows</string>
+    <string name="windows_settings_description">Przeglądaj prywatnie za pomocą naszej aplikacji dla systemu Windows</string>
+    <string name="windows_settings_description_ready">Możliwość pobrania</string>
+    <string name="windows_settings_description_list">Jesteś na liście!</string>
+    <string name="marcosTest">Allow</string>
 
     <!-- Notify Me View on Downloads -->
     <string name="downloadsNotifyMeTitle">Dowiedz się, kiedy pliki do pobrania będą gotowe</string>

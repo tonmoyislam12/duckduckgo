@@ -618,7 +618,7 @@
 
     <!-- MacOs Settings -->
     <string name="macos_settings_description">Mac için uygulamamızla internette gezinirken gizliliğinizi koruyun</string>
-    <string name="macos_settings_title">DuckDuckGo Masaüstü Uygulaması</string>
+    <string name="macos_settings_title">DuckDuckGo Mac Uygulaması</string>
 
     <!-- Downloads -->
     <string name="downloadsMenuItem">İndirilenler</string>
@@ -674,6 +674,13 @@
     <string name="permissionsPerWebsiteAllowSetting">İzin ver</string>
     <string name="permissionsPerWebsiteAskDisabledSetting">Tüm siteler için \"Sor\" devre dışı bırakıldı</string>
     <string name="permissionsPerWebsiteSelectorDialogTitle" instruction="%1$s is the name of a permissions and %2$s is the name of a website, i.e. Camera permission for example.com">%2$s için %1$s izni</string>
+
+    <!-- Windows Settings -->
+    <string name="windows_settings_title">DuckDuckGo Windows Uygulaması</string>
+    <string name="windows_settings_description">Windows uygulamamızla gizliliğinizi koruyarak gezinin</string>
+    <string name="windows_settings_description_ready">İndirme mevcut</string>
+    <string name="windows_settings_description_list">Listedesiniz!</string>
+    <string name="marcosTest">Allow</string>
 
     <!-- Notify Me View on Downloads -->
     <string name="downloadsNotifyMeTitle">İndirmeler hazır olduğunda bildirim alın</string>

@@ -676,6 +676,12 @@
     <string name="permissionsPerWebsiteAskDisabledSetting">\"Ask\" disabled for all sites</string>
     <string name="permissionsPerWebsiteSelectorDialogTitle" instruction="%1$s is the name of a permissions and %2$s is the name of a website, i.e. Camera permission for example.com">%1$s permission for %2$s</string>
 
+    <!-- Windows Settings -->
+    <string name="windows_settings_title">DuckDuckGo Windows App</string>
+    <string name="windows_settings_description">Browse privately with our app for Windows</string>
+    <string name="windows_settings_description_ready">Download available</string>
+    <string name="windows_settings_description_list">You\'re on the list!</string>
+
     <!-- Notify Me View on Downloads -->
     <string name="downloadsNotifyMeTitle">Find out when downloads are ready</string>
     <string name="downloadsNotifyMeSubtitle">Get a notification when downloads complete.</string>

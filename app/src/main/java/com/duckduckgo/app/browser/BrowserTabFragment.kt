@@ -188,6 +188,8 @@ import com.duckduckgo.autofill.api.domain.app.LoginCredentials
 import com.duckduckgo.autofill.api.domain.app.LoginTriggerType
 import com.duckduckgo.autofill.api.store.AutofillStore.ContainsCredentialsResult.*
 import com.duckduckgo.browser.api.brokensite.BrokenSiteData
+import com.duckduckgo.clicktoload.api.ClickToLoad
+import com.duckduckgo.clicktoload.api.ClickToLoadCallback
 import com.duckduckgo.di.scopes.FragmentScope
 import com.duckduckgo.downloads.api.DOWNLOAD_SNACKBAR_DELAY
 import com.duckduckgo.downloads.api.DOWNLOAD_SNACKBAR_LENGTH
@@ -371,6 +373,9 @@ class BrowserTabFragment :
     lateinit var autoconsent: Autoconsent
 
     @Inject
+    lateinit var clickToLoad: ClickToLoad
+
+    @Inject
     lateinit var autofillSettingsActivityLauncher: AutofillSettingsActivityLauncher
 
     @Inject
@@ -521,6 +526,12 @@ class BrowserTabFragment :
             isCosmetic: Boolean?,
         ) {
             viewModel.onAutoconsentResultReceived(consentManaged, optOutFailed, selfTestFailed, isCosmetic)
+        }
+    }
+
+    private val clickToLoadCallback = object : ClickToLoadCallback {
+        override fun onResultReceived() {
+            // Not implemented yet
         }
     }
 
@@ -1856,6 +1867,7 @@ class BrowserTabFragment :
             configureWebViewForAutofill(it)
             printInjector.addJsInterface(it) { viewModel.printFromWebView() }
             autoconsent.addJsInterface(it, autoconsentCallback)
+            clickToLoad.addJsInterface(it, clickToLoadCallback)
         }
 
         if (appBuildConfig.isDebug) {

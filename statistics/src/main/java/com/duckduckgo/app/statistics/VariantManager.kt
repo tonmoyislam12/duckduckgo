@@ -19,6 +19,12 @@ package com.duckduckgo.app.statistics
 import androidx.annotation.WorkerThread
 import com.duckduckgo.app.statistics.VariantManager.Companion.DEFAULT_VARIANT
 import com.duckduckgo.app.statistics.VariantManager.Companion.referrerVariant
+import com.duckduckgo.app.statistics.VariantManager.VariantFeature.BlockingTrackersAcrossWebRemoteMessage
+import com.duckduckgo.app.statistics.VariantManager.VariantFeature.DaxDialogMessage
+import com.duckduckgo.app.statistics.VariantManager.VariantFeature.NextLevelPrivacyNotification
+import com.duckduckgo.app.statistics.VariantManager.VariantFeature.NextLevelPrivacyRemoteMessage
+import com.duckduckgo.app.statistics.VariantManager.VariantFeature.OneEasyStepForPrivacyNotification
+import com.duckduckgo.app.statistics.VariantManager.VariantFeature.OneEasyStepForPrivacyRemoteMessage
 import com.duckduckgo.app.statistics.store.StatisticsDataStore
 import com.duckduckgo.appbuildconfig.api.AppBuildConfig
 import java.util.*
@@ -31,6 +37,13 @@ interface VariantManager {
     sealed class VariantFeature {
         object CookiePromptManagementExperiment : VariantFeature()
         object OptimiseOnboardingExperiment : VariantFeature()
+
+        object OneEasyStepForPrivacyRemoteMessage : VariantFeature()
+        object BlockingTrackersAcrossWebRemoteMessage : VariantFeature()
+        object NextLevelPrivacyRemoteMessage : VariantFeature()
+        object OneEasyStepForPrivacyNotification : VariantFeature()
+        object NextLevelPrivacyNotification : VariantFeature()
+        object DaxDialogMessage : VariantFeature()
     }
 
     companion object {
@@ -59,6 +72,15 @@ interface VariantManager {
                 features = listOf(VariantFeature.OptimiseOnboardingExperiment),
                 filterBy = { isEnglishLocale() && !isGBCountry() },
             ),
+
+            // Experiment: Increase retention through AppTP promotions
+            Variant(key = "ze", weight = 0.0, features = emptyList(), filterBy = { noFilter() }),
+            Variant(key = "zh", weight = 0.0, features = listOf(OneEasyStepForPrivacyRemoteMessage), filterBy = { noFilter() }),
+            Variant(key = "zi", weight = 0.0, features = listOf(BlockingTrackersAcrossWebRemoteMessage), filterBy = { noFilter() }),
+            Variant(key = "zl", weight = 0.0, features = listOf(NextLevelPrivacyRemoteMessage), filterBy = { noFilter() }),
+            Variant(key = "zm", weight = 0.0, features = listOf(OneEasyStepForPrivacyNotification), filterBy = { noFilter() }),
+            Variant(key = "zn", weight = 0.0, features = listOf(NextLevelPrivacyNotification), filterBy = { noFilter() }),
+            Variant(key = "zo", weight = 0.0, features = listOf(DaxDialogMessage), filterBy = { noFilter() }),
         )
 
         val REFERRER_VARIANTS = listOf(
@@ -258,6 +280,13 @@ fun VariantManager.isCookiePromptManagementExperimentEnabled() =
 
 fun VariantManager.isOptimiseOnboardingExperimentEnabled() =
     this.getVariant().hasFeature(VariantManager.VariantFeature.OptimiseOnboardingExperiment)
+
+fun VariantManager.isOneEasyStepForPrivacyRemoteMessageEnabled() = this.getVariant().hasFeature(OneEasyStepForPrivacyRemoteMessage)
+fun VariantManager.isBlockingTrackersAcrossWebRemoteMessageEnabled() = this.getVariant().hasFeature(BlockingTrackersAcrossWebRemoteMessage)
+fun VariantManager.isNextLevelPrivacyRemoteMessageEnabled() = this.getVariant().hasFeature(NextLevelPrivacyRemoteMessage)
+fun VariantManager.isOneEasyStepForPrivacyNotificationEnabled() = this.getVariant().hasFeature(OneEasyStepForPrivacyNotification)
+fun VariantManager.isNextLevelPrivacyNotificationEnabled() = this.getVariant().hasFeature(NextLevelPrivacyNotification)
+fun VariantManager.isDaxDialogMessageEnabled() = this.getVariant().hasFeature(DaxDialogMessage)
 
 /**
  * A variant which can be used for experimentation.

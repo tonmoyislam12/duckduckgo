@@ -158,6 +158,7 @@ class NotificationHandlerService : IntentService("NotificationHandlerService") {
         const val CANCEL = "com.duckduckgo.notification.cancel"
         const val WEBSITE = "com.duckduckgo.notification.website"
         const val CHANGE_ICON_FEATURE = "com.duckduckgo.notification.app.feature.changeIcon"
+        const val APPTP_LAUNCH = "com.duckduckgo.notification.launch.apptp"
     }
 
     companion object {

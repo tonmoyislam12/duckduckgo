@@ -56,12 +56,15 @@ class PlayStoreAppReferrerStateListener @Inject constructor(
      */
     override fun initialiseReferralRetrieval() {
         try {
+            Timber.i("Initialising referral retrieval")
             initialisationStartTime = System.currentTimeMillis()
 
             if (appReferrerDataStore.referrerCheckedPreviously) {
                 referralResult = if (appReferrerDataStore.installedFromEuAuction) {
+                    Timber.i("Already inspected this referrer data (EU auction")
                     EuAuctionReferrerFound(fromCache = true)
                 } else {
+                    Timber.i("Already inspected this referrer data (non-EU auction")
                     loadPreviousReferrerData()
                 }
 
@@ -70,8 +73,10 @@ class PlayStoreAppReferrerStateListener @Inject constructor(
             }
 
             if (playStoreReferralServiceInstalled()) {
+                Timber.i("Starting connection to referrer service")
                 referralClient.startConnection(this)
             } else {
+                Timber.w("Play store referral service not installed")
                 referralResult = ParseFailure(ReferralServiceUnavailable)
             }
         } catch (e: RuntimeException) {
@@ -93,7 +98,7 @@ class PlayStoreAppReferrerStateListener @Inject constructor(
 
     override fun onInstallReferrerSetupFinished(responseCode: Int) {
         val referrerRetrievalDurationMs = System.currentTimeMillis() - initialisationStartTime
-        Timber.i("Took ${referrerRetrievalDurationMs}ms to get initial referral data callback")
+        Timber.i("Took ${referrerRetrievalDurationMs}ms to get initial referral data callback. Response code: $responseCode")
         try {
             when (responseCode) {
                 OK -> {
@@ -102,6 +107,7 @@ class PlayStoreAppReferrerStateListener @Inject constructor(
                         val response = referralClient.installReferrer
                         val referrer = response.installReferrer
                         val parsedResult = appInstallationReferrerParser.parse(referrer)
+                        Timber.w("Referrer received: $referrer")
                         referralResultReceived(parsedResult)
                     }.onFailure {
                         Timber.e(it, "Error getting install referrer")
@@ -153,6 +159,7 @@ class PlayStoreAppReferrerStateListener @Inject constructor(
         val playStoreConnectionServiceIntent = Intent()
         playStoreConnectionServiceIntent.component = ComponentName(PLAY_STORE_PACKAGE, PLAY_STORE_REFERRAL_SERVICE)
         val matchingServices = packageManager.queryIntentServices(playStoreConnectionServiceIntent, 0)
+        Timber.i("Found ${matchingServices.size} matching services for Play Store referral service")
         return matchingServices.size > 0
     }
 
@@ -175,6 +182,7 @@ class PlayStoreAppReferrerStateListener @Inject constructor(
     }
 
     private fun referralResultFailed(reason: ParseFailureReason) {
+        Timber.w("Failed to retrieve referrer data: ${reason.javaClass.simpleName}")
         referralResult = ParseFailure(reason)
     }
 

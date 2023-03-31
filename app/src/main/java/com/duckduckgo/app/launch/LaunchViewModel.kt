@@ -55,11 +55,11 @@ class LaunchViewModel @Inject constructor(
     private suspend fun waitForReferrerData() {
         val startTime = System.currentTimeMillis()
 
-        withTimeoutOrNull(MAX_REFERRER_WAIT_TIME_MS) {
+        val referrer = withTimeoutOrNull(MAX_REFERRER_WAIT_TIME_MS) {
             Timber.d("Waiting for referrer")
             return@withTimeoutOrNull appReferrerStateListener.waitForReferrerCode()
         }
 
-        Timber.d("Waited ${System.currentTimeMillis() - startTime}ms for referrer")
+        Timber.d("Waited ${System.currentTimeMillis() - startTime}ms for referrer ${referrer?.javaClass?.simpleName}")
     }
 }
